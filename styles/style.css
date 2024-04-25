@@ -5,3 +5,32 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+#calculator {
+    width: 400px;
+    background-color: blue;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#calculator_top {
+    width: 100%;
+    height: 48px;
+    background-color: turquoise;
+    margin-bottom: 1rem;
+}
+
+#calculator_bottom {
+    width: 100%;
+    display: flex;
+}
+
+#calculator_bottom_left {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#calculator_bottom_right {
+    display: flex;
+    flex-direction: column;
+}
