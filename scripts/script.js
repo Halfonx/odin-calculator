@@ -4,7 +4,6 @@ const clearButton = document.querySelector('#clear');
 
 buttons.forEach(function(button) {
     button.addEventListener('click', function() {
-        console.log(button.value);
         screen.innerText += button.value;
     })
 })
