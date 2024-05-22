@@ -21,7 +21,7 @@ body {
 
 button {
     cursor: pointer;
-    color: #FFFFFF;
+    color: #EEEEEE;
     background-color: #444444;
     outline-color: none;
     border: 1px solid #000000;
@@ -35,4 +35,12 @@ button:hover {
 
 .double-size {
     grid-column: span 2;
+}
+
+.display {
+    background-color: #222222;
+    color: #EEEEEE;
+    grid-column: span 4;
+    padding: 0.5rem;
+    text-align: end;
 }
