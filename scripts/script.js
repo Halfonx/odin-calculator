@@ -16,7 +16,7 @@ class Calculator {
     }
 
     appendNumber(number) {
-        this.currentNumber = number;
+        this.currentNumber = this.currentNumber.toString() + number.toString();
     }
 
     chooseOperation(operator) {
@@ -47,4 +47,9 @@ numberButtons.forEach(button => {
         calculator.appendNumber(button.innerText);
         calculator.updateDisplay();
     })
+})
+
+clearButton.addEventListener('click', () => {
+    calculator.clear();
+    calculator.updateDisplay();
 })
