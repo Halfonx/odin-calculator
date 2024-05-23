@@ -12,10 +12,11 @@ class Calculator {
     }
 
     delete() {
-
+        this.currentNumber = this.currentNumber.slice(0, -1).toString();
     }
 
     appendNumber(number) {
+        if(number === '.' && this.currentNumber.includes('.')) return;
         this.currentNumber = this.currentNumber.toString() + number.toString();
     }
 
@@ -51,5 +52,10 @@ numberButtons.forEach(button => {
 
 clearButton.addEventListener('click', () => {
     calculator.clear();
+    calculator.updateDisplay();
+})
+
+deleteButton.addEventListener('click', () => {
+    calculator.delete();
     calculator.updateDisplay();
 })
