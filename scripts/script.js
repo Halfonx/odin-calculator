@@ -22,7 +22,8 @@ class Calculator {
 
     chooseOperation(operator) {
         if(this.previousNumber.includes(operator) && this.currentNumber === '') return;
-        this.previousNumber = this.currentNumber.toString() + operator.toString();
+        this.operator = operator;
+        this.previousNumber = this.currentNumber + operator.toString();
         this.currentNumber = '';
     }
 
