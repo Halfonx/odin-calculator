@@ -21,9 +21,12 @@ class Calculator {
     }
 
     chooseOperation(operator) {
-        if(this.previousNumber.includes(operator) && this.currentNumber === '') return;
+        if(this.currentNumber === '') return;
+        if (this.previousNumber !== '') {
+            this.compute();
+        }
         this.operator = operator;
-        this.previousNumber = this.currentNumber + operator.toString();
+        this.previousNumber = this.currentNumber;
         this.currentNumber = '';
     }
 
@@ -69,4 +72,9 @@ operatorButtons.forEach(button => {
         calculator.chooseOperation(button.innerText);
         calculator.updateDisplay();
     })
+})
+
+equalButton.addEventListener('click', (button) => {
+    calculator.compute();
+    calculator.updateDisplay();
 })
