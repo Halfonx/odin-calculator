@@ -31,12 +31,36 @@ class Calculator {
     }
 
     compute() {
-
+        let computation;
+        let previousCompute = parseFloat(this.previousNumber);
+        let currentCompute = parseFloat(this.currentNumber);
+        if (isNaN(previousCompute) || isNaN(currentCompute)) return;
+        switch(this.operator) {
+            case '+':
+                computation = previousCompute + currentCompute;
+                break;
+            case '-':
+                computation = previousCompute - currentCompute;
+                break;
+            case 'x':
+                computation = previousCompute * currentCompute;
+                break;
+            case '÷':
+                computation = previousCompute / currentCompute;
+                break;
+            default:
+                return;
+        }
+        this.currentNumber = computation;
+        this.operator = undefined;
+        this.previousNumber = '';
     }
 
     updateDisplay() {
+        if (this.operator != null) {
+            this.previousNumberText.innerText = `${this.previousNumber} ${this.operator}`;
+        }
         this.currentNumberText.innerText = this.currentNumber;
-        this.previousNumberText.innerText = this.previousNumber;
     }
 }
 
