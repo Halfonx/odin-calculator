@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
 *,
 ::before,
 ::after {
@@ -12,21 +14,24 @@ body {
 
 .calculator {
     display: grid;
+    gap: 2px;
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 50px);
+    grid-template-columns: repeat(4, 75px);
     grid-template-rows: minmax(100px, auto) repeat(5, 50px);
 }
 
 button {
     cursor: pointer;
     color: #EEEEEE;
+    font-weight: bold;
     background-color: #444444;
     outline-color: none;
     border: 1px solid #000000;
     font-size: 1rem;
     font-family: sans-serif;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -37,9 +42,37 @@ button:hover {
     grid-column: span 2;
 }
 
+button[data-clear] {
+    background-color: #c02f2f;
+}
+
+button[data-clear]:hover {
+    background-color: #922424;
+}
+
+button[data-delete] {
+    background-color: #d4803b;
+    color: #222222;
+}
+
+button[data-delete]:hover {
+    background-color: #9e602d;
+}
+
+button[data-operator] {
+    background-color: #DDDDDD;
+    color: #222222;
+}
+
+button[data-operator]:hover {
+    background-color: #bbbbbb;
+}
+
 .display {
     background-color: #222222;
-    color: #EEEEEE;
+    color: #29c415;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
     grid-column: 1 / -1; /* Allow the column to cover the full grid width */
     padding: 0.5rem;
     display: flex;
@@ -48,6 +81,8 @@ button:hover {
     justify-content: space-evenly;
     overflow-wrap: break-word; /* Allow the word to break */
     word-break: break-word; /* Define how the word should break */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .previous-number {
