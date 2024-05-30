@@ -60,6 +60,8 @@ class Calculator {
         this.currentNumberText.innerText = this.currentNumber;
         if (this.operator != null) {
             this.previousNumberText.innerText = `${this.previousNumber} ${this.operator}`;
+        } else {
+            this.previousNumberText.innerText = this.previousNumber;
         }
     }
 }
@@ -86,7 +88,7 @@ clearButton.addEventListener('click', (button) => {
     calculator.updateDisplay();
 })
 
-deleteButton.addEventListener('click', () => {
+deleteButton.addEventListener('click', (button) => {
     calculator.delete();
     calculator.updateDisplay();
 })
