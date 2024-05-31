@@ -34,10 +34,6 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: #555555;
-}
-
 .double-size {
     grid-column: span 2;
 }
@@ -46,26 +42,15 @@ button[data-clear] {
     background-color: #c02f2f;
 }
 
-button[data-clear]:hover {
-    background-color: #922424;
-}
 
 button[data-delete] {
     background-color: #d4803b;
     color: #222222;
 }
 
-button[data-delete]:hover {
-    background-color: #9e602d;
-}
-
 button[data-operator] {
     background-color: #DDDDDD;
     color: #222222;
-}
-
-button[data-operator]:hover {
-    background-color: #bbbbbb;
 }
 
 .display {
@@ -91,4 +76,22 @@ button[data-operator]:hover {
 
 .current-number {
     font-size: 2rem;
+}
+
+@media (hover:hover) {
+    button:hover {
+        background-color: #555555;
+    }
+
+    button[data-clear]:hover {
+        background-color: #922424;
+    }
+
+    button[data-delete]:hover {
+        background-color: #9e602d;
+    }
+
+    button[data-operator]:hover {
+        background-color: #bbbbbb;
+    }
 }
